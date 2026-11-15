@@ -96,7 +96,7 @@ def shell(title: str, content: str, description=""):
 <meta name="description" content="{esc(description or CFG['subtitle'])}">
 <link rel="stylesheet" href="{STYLE}">
 </head><body>
-<header class="top"><div class="wrap nav"><a class="brand" href="{HOME}">{esc(CFG['title'])}</a><nav><a href="{HOME}">Writeups</a><a href="{ADMIN}">Import .md</a><a href="https://github.com/{esc(CFG['github_owner'])}/{esc(CFG['github_repo'])}" target="_blank">GitHub</a><button id="themeBtn" class="ghost" aria-label="Toggle theme">◐</button></nav></div></header>
+<header class="top"><div class="wrap nav"><a class="brand" href="{HOME}">{esc(CFG['title'])}</a><nav><a href="https://github.com/{esc(CFG['github_owner'])}/{esc(CFG['github_repo'])}" target="_blank">GitHub</a><button id="themeBtn" class="ghost" aria-label="Toggle theme">◐</button></nav></div></header>
 <main class="wrap">{content}</main>
 <footer class="wrap foot">Built from Markdown · Hosted with GitHub Pages · {esc(CFG['author'])}</footer>
 <script src="{APP}"></script></body></html>'''
@@ -113,8 +113,7 @@ for p in posts:
 <div class="meta">{' · '.join(map(esc,meta_bits))}</div><p>{esc(p['description'])}</p><div>{tags}</div></article>''')
 
 tag_buttons = ''.join(f'<button class="tag-filter" data-tag="{esc(t.lower())}">{esc(t)}</button>' for t in all_tags)
-index_content = f'''<section class="hero"><div class="eyebrow">SECURITY NOTES / WRITEUPS</div><h1>{esc(CFG['subtitle'])}</h1><p>Markdown-first technical notes. HackMD sources can be synchronized automatically during GitHub Pages deployment.</p></section>
-<section class="toolbar"><input id="search" type="search" placeholder="Search writeups, tools, tags…" aria-label="Search"><div class="filters"><button class="tag-filter active" data-tag="">All</button>{tag_buttons}</div></section>
+index_content = f'''<section class="toolbar"><input id="search" type="search" placeholder="Search writeups, tools, tags…" aria-label="Search"><div class="filters"><button class="tag-filter active" data-tag="">All</button>{tag_buttons}</div></section>
 <section id="posts" class="grid">{''.join(cards) if cards else '<div class="empty">No posts yet. Use Import .md or add Markdown files to content/posts.</div>'}</section>'''
 (PUBLIC / "index.html").write_text(shell(CFG["title"], index_content), encoding="utf-8")
 
