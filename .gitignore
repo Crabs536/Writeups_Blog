@@ -1,0 +1,5 @@
+public/
+__pycache__/
+.venv/
+content/imported/*.md
+!content/imported/.gitkeep
