@@ -3,7 +3,7 @@
   "subtitle": "CTF notes, security research, reverse engineering and technical writeups",
   "author": "Pham Huu Thanh Thien",
   "github_owner": "Crabs536",
-  "github_repo": "security-writeups",
-  "base_path": "/security-writeups",
+  "github_repo": "Writeups_Blog",
+  "base_path": "/Writeups_Blog",
   "accent": "#7dd3fc"
 }
