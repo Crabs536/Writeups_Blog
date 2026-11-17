@@ -1,0 +1,11 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.45, fontname="DejaVu Sans"];
+  node [shape=box, style="rounded,filled", fillcolor="#F1F6F9", color="#A9C3D3",fontname="DejaVu Sans",fontsize=10,margin="0.15,0.11"];
+  edge [color="#677D88", arrowsize=0.65, penwidth=1.35];
+  a [label="5136\nAD attribute change"];
+  b [label="4768\nKerberos TGT request"];
+  c [label="4624 / WinRM logs\nSession and remote access"];
+  d [label="Correlate by\naccount, DC, time"];
+  e [label="Investigate\nvalid WHfB registration?",fillcolor="#E8F6ED",color="#99C5AC"];
+  a->d; b->d; c->d; d->e;
+}
